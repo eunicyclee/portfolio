@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TrekAssist - Case Study</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      gap: 40px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    nav a:hover {
+      opacity: 0.6;
+    }
+
+    nav a:active {
+      transform: scale(0.95);
+      opacity: 0.5;
+    }
+
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      min-width: 180px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 4px;
+      margin-top: 5px;
+      padding: 8px 0;
+      z-index: 1000;
+    }
+
+    .dropdown-content::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 0;
+      right: 0;
+      height: 5px;
+    }
+
+    .nav-dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 20px;
+      color: #333;
+      text-decoration: none;
+      font-size: 15px;
+      transition: all 0.2s;
+    }
+
+    .dropdown-content a:hover {
+      background: #f5f5f5;
+      opacity: 1;
+    }
+
+    .dropdown-content a:active {
+      background: #e5e5e5;
+      transform: scale(0.98);
+    }
+
+    .hero-case {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: linear-gradient(135deg, #f5f5f5 0%, #e8f4f8 50%, #fce8f3 100%);
+    }
+
+    .hero-case h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      font-weight: 400;
+    }
+
+    .hero-case p {
+      font-size: 20px;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .meta-item {
+      text-align: center;
+    }
+
+    .meta-label {
+      font-size: 13px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .meta-value {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 1000px;
+      height: 500px;
+      background: #ccc;
+      margin: 40px auto 0;
+      border-radius: 8px;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 80px 50px;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    section h2 {
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    section p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .highlight-box {
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 8px;
+      margin: 30px 0;
+      border-left: 4px solid #a8d5e2;
+    }
+
+    .highlight-box h3 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .image-grid-case {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .case-image {
+      width: 100%;
+      height: 300px;
+      background: #ccc;
+      border-radius: 8px;
+    }
+
+    .case-image.large {
+      height: 450px;
+      grid-column: 1 / -1;
+    }
+
+    .process-steps {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .step {
+      flex: 1;
+      min-width: 150px;
+      text-align: center;
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: #a8d5e2;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-size: 20px;
+      font-weight: 500;
+      color: white;
+    }
+
+    .step h3 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 15px;
+      color: #666;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .outcome-card {
+      text-align: center;
+      padding: 30px 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    .outcome-stat {
+      font-size: 42px;
+      font-weight: 500;
+      color: #a8d5e2;
+      margin-bottom: 10px;
+    }
+
+    .outcome-label {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 60px;
+      padding: 12px 30px;
+      background: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    .back-link:hover {
+      background: #555;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: #f5f5f5;
+      padding: 40px 50px;
+      margin-top: 0;
+    }
+
+    .footer-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      font-style: italic;
+      color: #666;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 30px;
+    }
+
+    .footer-right a {
+      text-decoration: none;
+      color: #333;
+      transition: opacity 0.3s;
+    }
+
+    .footer-right a:hover {
+      opacity: 0.6;
+    }
+
+    @media (max-width: 1024px) {
+      nav {
+        padding: 25px 30px;
+      }
+
+      main {
+        padding: 60px 30px;
+      }
+
+      footer {
+        padding: 40px 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+      }
+
+      .nav-left, .nav-right {
+        gap: 25px;
+      }
+
+      .hero-case {
+        padding: 50px 15px 40px;
+      }
+
+      .hero-case h1 {
+        font-size: clamp(32px, 7vw, 48px);
+      }
+
+      .hero-case p {
+        font-size: clamp(16px, 4vw, 20px);
+      }
+
+      .hero-image {
+        height: 300px;
+      }
+
+      main {
+        padding: 50px 20px;
+      }
+
+      section {
+        margin-bottom: 60px;
+      }
+
+      section h2 {
+        font-size: clamp(28px, 6vw, 36px);
+      }
+
+      section p {
+        font-size: 16px;
+      }
+
+      .process-steps {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-meta {
+        gap: 20px;
+      }
+
+      .image-grid-case {
+        grid-template-columns: 1fr;
+      }
+
+      .case-image {
+        height: 250px;
+      }
+
+      .case-image.large {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <nav>
+    <div class="nav-left">
+      <div class="nav-dropdown">
+        <a href="#work">work</a>
+        <div class="dropdown-content">
+          <a href="#ui-ux-design">ui/ux design</a>
+          <a href="#physical-products">physical products</a>
+          <a href="#assistive-technology">assistive technology</a>
+        </div>
+      </div>
+      <a href="#art">art</a>
+    </div>
+    <div class="nav-center">
+        <a href="index.html">
+          <img src="images/leaf.png" alt="Eunice Lee Logo" class="logo">
+        </a>
+      </div>
+    <div class="nav-right">
+      <a href="#about">about</a>
+      <a href="#resume">resume</a>
+    </div>
+  </nav>
+
+  <section class="hero-case">
+    <h1>TrekAssist</h1>
+    <p>An intuitive and culturally adaptable interface for e-ink devices designed to guide visitors around Yellowstone National Park.</p>
+    
+    <div class="project-meta">
+      <div class="meta-item">
+        <div class="meta-label">Role</div>
+        <div class="meta-value">UX Designer</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Purpose</div>
+        <div class="meta-value">Computer Interface<br>Design Final</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Team</div>
+        <div class="meta-value">3 product managers<br>2 designers</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Tools</div>
+        <div class="meta-value">Figma, FigJam</div>
+      </div>
+    </div>
+
+    <div class="hero-image"></div>
+  </section>
+
+  <main>
+    <section>
+      <h2>Problem Statement</h2>
+      <p>Yellowstone National Park receives over 4 million visitors annually, many of whom are international tourists unfamiliar with the park's layout, safety guidelines, and cultural significance. Current navigation tools are limited to paper maps and smartphone apps that drain battery life and require constant connectivity.</p>
+      
+      <div class="highlight-box">
+        <h3>How might we...</h3>
+        <p>...create a sustainable, accessible navigation solution that serves diverse visitors while respecting the park's natural environment?</p>
+      </div>
+    </section>
+
+    <!-- <section>
+      <h2>Research</h2>
+      <p>We developed user testing plans to understand user needs and pain points.</p>
+      
+      <div class="image-grid-case">
+        <div class="case-image"></div>
+        <div class="case-image"></div>
+      </div>
+
+      <p>Our research revealed that visitors struggled with three main challenges: understanding trail difficulty levels, locating facilities quickly, and accessing information in their native language.</p>
+    </section> -->
+
+    <section>
+      <h2>Design Process</h2>
+      
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Ideation</h3>
+          <p>Brainstormed solutions focused on e-ink technology for battery efficiency</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Wireframing</h3>
+          <p>Created low-fidelity prototypes testing different needs for the device</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Refinement</h3>
+          <p>Iterated based on feedback and accessibility standards</p>
+        </div>
+      </div>
+
+      <div class="case-image large"></div>
+
+      <p>We prioritized a minimalist interface that works well on e-ink displays, with high contrast for outdoor visibility. The design supports 8 pages and has easily accessible safety features.</p>
+
+      <div class="image-grid-case">
+        <div class="case-image"></div>
+        <div class="case-image"></div>
+        <div class="case-image"></div>
+      </div>
+    </section>
+
+    <!-- <section>
+      <h2>Outcomes</h2>
+      <p>The TrekAssist prototype was tested with 50 visitors during a pilot program. Results showed significant improvements in visitor experience and park navigation efficiency.</p>
+
+      <div class="outcomes-grid">
+        <div class="outcome-card">
+          <div class="outcome-stat">92%</div>
+          <div class="outcome-label">User satisfaction rate</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-stat">45%</div>
+          <div class="outcome-label">Reduction in getting lost</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-stat">8+</div>
+          <div class="outcome-label">Languages supported</div>
+        </div>
+      </div> -->
+    <section>
+      <div class="highlight-box">
+        <h3>Key Learnings</h3>
+        <p>Designing for outdoor environments requires careful consideration of readability, battery life, and diverse user needs. Cultural sensitivity and accessibility must be built into the foundation, not added as afterthoughts.</p>
+      </div>
+    </section>
+
+    <a href="index.html" class="back-link">← Back to Projects</a>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        thanks for visiting! :-D <br>
+        designed & coded by eunice with love<br>
+      </div>
+      <div class="footer-right">
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/eunice-lee-372288231/">linkedin</a>
+        <a href="#email">email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
