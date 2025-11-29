@@ -1,0 +1,527 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PawPup Spa - Case Study</title>
+  <link rel="stylesheet" href="nav.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .hero-case {
+      text-align: center;
+      padding: 50px 20px 60px;
+      background: linear-gradient(135deg, #fffff2 0%, #e8f8f5 50%, #fce8f3 100%);
+    }
+
+    .hero-case h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+      font-weight: 400;
+    }
+
+    .hero-case p {
+      font-size: 20px;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .meta-item {
+      text-align: center;
+    }
+
+    .meta-label {
+      font-size: 13px;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .meta-value {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      background: #ccc;
+      margin: 40px auto 0;
+      border-radius: 8px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 50px;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    section h2 {
+      font-size: 36px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    section p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .highlight-box {
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 8px;
+      margin: 30px 0;
+      border-left: 4px solid #a8d5e2;
+    }
+
+    .highlight-box h3 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .image-grid-case {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+
+    .case-image {
+      width: 100%;
+      height: auto;           
+      min-height: 250px;
+      border-radius: 8px;
+      display: block;
+    }
+
+    .case-image.large {
+      min-height: 100%;         
+      height: auto;     
+      min-height: 200px;        
+      grid-column: 1 / -1;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .process-steps {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .step {
+      flex: 1;
+      min-width: 150px;
+      text-align: center;
+    }
+
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: #a8d5e2;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 15px;
+      font-size: 30px;
+      font-weight: 500;
+      color: white;
+    }
+
+    .step h3 {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      font-size: 18px;
+      color: #666;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .outcome-card {
+      text-align: center;
+      padding: 30px 20px;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    .outcome-stat {
+      font-size: 42px;
+      font-weight: 500;
+      color: #a8d5e2;
+      margin-bottom: 10px;
+    }
+
+    .outcome-label {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 60px;
+      padding: 12px 30px;
+      background: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    .back-link:hover {
+      background: #555;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: #f5f5f5;
+      padding: 40px 50px;
+      margin-top: 0;
+    }
+
+    .footer-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      font-style: italic;
+      color: #666;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 30px;
+    }
+
+    .footer-right a {
+      text-decoration: none;
+      color: #333;
+      transition: opacity 0.3s;
+    }
+
+    .footer-right a:hover {
+      opacity: 0.6;
+    }
+
+    @media (max-width: 1024px) {
+
+      main {
+        padding: 60px 30px;
+      }
+
+      footer {
+        padding: 40px 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .hero-case {
+        padding: 50px 15px 40px;
+      }
+
+      .hero-case h1 {
+        font-size: clamp(32px, 7vw, 48px);
+      }
+
+      .hero-case p {
+        font-size: clamp(16px, 4vw, 20px);
+      }
+
+      .hero-image {
+        height: 300px;
+      }
+
+      main {
+        padding: 50px 20px;
+      }
+
+      section {
+        margin-bottom: 60px;
+      }
+
+      section h2 {
+        font-size: clamp(28px, 6vw, 36px);
+      }
+
+      section p {
+        font-size: 16px;
+      }
+
+      .process-steps {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-meta {
+        gap: 20px;
+      }
+
+      .image-grid-case {
+        grid-template-columns: 1fr;
+      }
+
+      .case-image {
+        height: 250px;
+      }
+
+      .case-image.large {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <nav>
+    <div class="nav-left">
+      <div class="nav-dropdown">
+        <a href="#work">work</a>
+        <div class="dropdown-content">
+          <a href="#ui-ux-design">ui/ux design</a>
+          <a href="#physical-products">physical products</a>
+          <a href="#assistive-technology">assistive technology</a>
+        </div>
+      </div>
+      <a href="#art">art</a>
+    </div>
+    <div class="nav-center">
+        <a href="index.html">
+          <img src="images/leaf.png" alt="Eunice Lee Logo" class="logo">
+        </a>
+      </div>
+    <div class="nav-right">
+      <a href="#about">about</a>
+      <a href="#resume">resume</a>
+    </div>
+  </nav>
+
+  <section class="hero-case">
+    <h1>PawPup Spa</h1>
+    <p>A user-friendly kiosk interface for an automated self-service dog washing service.</p>
+    
+    <div class="project-meta">
+      <div class="meta-item">
+        <div class="meta-label">Role</div>
+        <div class="meta-value">UX Designer</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Timeline</div>
+        <div class="meta-value">Oct-Nov 2025<br>3 weeks</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Team</div>
+        <div class="meta-value">Individual project!</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Tools</div>
+        <div class="meta-value">Figma<br>FigJam</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Skills</div>
+        <div class="meta-value">UI Design</div>
+      </div>
+    </div>
+
+  
+    <img src="pawpup/pawpup hero.png" alt="Pawpup hero" class="case-image large">
+  </section>
+
+  <main>
+    <section>
+      <h2>Problem Statement</h2>
+      <div class="highlight-box">
+        <h3>How might I...</h3>
+        <p>...design and create an intuitive and inviting dog washing kiosk that highlights safety, ease of use, and accessibility for various users?</p>
+      </div>
+    </section>
+
+    <section> 
+      <h2>Project Context</h2>
+
+      <p>This consulting task from my Computer Interface Design class shows the tasks of creating an innovative self-cleaning service for dogs. This kiosk allows users to wash their dogs without having to worry about their level of technical knowledge.<br>Guidelines included:<br>• a resolution of 1500 x 1000 pixels, which will be presented on a 14-inch diagonal display
+<br>    • developing a comprehensive set of functional capabilities that prioritize user convenience and simplicity<br></p>
+    </section>
+
+    <!-- <section>
+      <h2>Research</h2>
+      <p>We developed user testing plans to understand user needs and pain points.</p>
+      
+      <div class="image-grid-case">
+        <div class="case-image"></div>
+        <div class="case-image"></div>
+      </div>
+
+      <p>Our research revealed that visitors struggled with three main challenges: understanding trail difficulty levels, locating facilities quickly, and accessing information in their native language.</p>
+    </section> -->
+
+    <section>
+      <h2>Design Process</h2>
+      
+      <div class="process-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Ideation</h3>
+          <p>I asked myself, "What are some key features and functional capabilities this kiosk would need?"</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>User Flow</h3>
+          <p>I created a journey map for the user's directionality while using the kiosk</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Wireframing</h3>
+          <p>I designed wireframes based on the features and user flow developed.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Prototyping</h3>
+          <p>I created high-fidelity screens that carry the users through a friendly dog-washing journey.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Ideation</h2>
+      <p>The first thing I did was create a list of functionalities that the kiosk would feature. I quickly paired this with a mood board to get my ideas flowing.<br>
+      <div class="highlight-box">
+        <h3>Key Functionalities</h3>
+        <p>1. A welcome screen that contains a simple start to the process, an information section, and a language selection with an optional login page for members.<br>
+          2. An audio player and volume bar that allows users to choose to hear the information and steps provided.<br>
+          3. Recommended settings for the user’s dog based on its weight, breed, size, fur/coat type, etc.<br>
+          4. Customizable settings such as power/water pressure, temperature, speed, amount of wash liquid, etc.<br>
+          5. An intuitive guided process for each step that includes video tutorials and/or images, and specific Q&A for that step. The Q&A for the entire process (rather than step-specific) can also be found through an “i” (information) button on the main screen at all times.<br>
+          6. Help pages where users can call the company, receive assistance from the interface for troubleshooting, and guides to solve common issues the kiosk faces.<br>
+          7. Easy payment screens that can accept multiple types and provide options for memberships/loyalty programs.<br>
+          8. Safety reminders, such as recommendations for how to place the user’s dog and prepare their sensitive areas. A visible button for pausing/stopping will be prominently displayed during the washing process.<br>
+          9. Customizable settings during dog drying, such as air speed, temperature, time undergoing drying, and a timer.<br>
+          10. An ending summary and feedback screen that informs users of the total time, the total cost, and the total work during the wash (the level of cleaning). Users will also be able to rate the service out of 5 stars or answer a short survey. (This process can help with the loyalty program.)<br>
+</p>
+      </div>
+    </section>
+
+    <section>
+      <h2> User Flow </h2>
+      <img src="pawpup/pawpup flow.png" alt="pawpup user flow" class="case-image">
+      <p><br>There were two things I was sure of as I planned the user flow: I wanted the path to be simple, and I wanted the kiosk process to be familiar. Inspired by kiosks that can be found at cafes or boba shops to order drinks, I was able to map out the user journey.</p>
+    </section>
+
+    <section>
+      <h2>Wireframing</h2>
+    <p>My first steps in designing was to create low-fidelity wireframes that could transform my ideas into screens. I wanted to keep the buttons familiar, similar, and the navigation clear and smooth.<br>
+      During this step, I was also able to create a moodboard that could help me decide on which direction I wanted to take my designs.<br></p>
+        <img src="pawpup/moodboard.png" alt="pawpup moodboard" class="case-image">
+        <img src="pawpup/pawpup wireframes.png" alt="TrekAssist wireframes" class="case-image">
+      </div>
+
+    <p><br>I value feedback - a LOT. My professor, roleplaying as my consultant, was able to provide valudable feedback on my lo-fi wireframes. She made it clear that there were 2 main things I needed to fix:<br>
+    1. Make the text more easily readable<br>
+    2. Make the elements more visible; make the designs truly pop<br>
+    As I began incorporating the design inspiration from my moodboard, I made sure to incorporate the feedback I received. To make the interface accessible and friendly to all users, I created a multi-language selection option. When I was creating it, I realized that I needed the buttons to be bigger so that the text was able to be read more clearly by users of different visual capabilities.<br></p>
+        <img src="pawpup/hi-fi.png" alt="pawpup wireframes" class="case-image">
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; align-items: center;">
+      <h2>Prototyping</h2>
+      <p>Of course, my final step was to create a prototype of the hi-fi frames. Check it out here!</p>
+      <video width="700" controls>
+        <source src="pawpup/pawpup demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <!-- <section>
+      <h2>Outcomes</h2>
+      <p>The TrekAssist prototype was tested with 50 visitors during a pilot program. Results showed significant improvements in visitor experience and park navigation efficiency.</p>
+
+      <div class="outcomes-grid">
+        <div class="outcome-card">
+          <div class="outcome-stat">92%</div>
+          <div class="outcome-label">User satisfaction rate</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-stat">45%</div>
+          <div class="outcome-label">Reduction in getting lost</div>
+        </div>
+        <div class="outcome-card">
+          <div class="outcome-stat">8+</div>
+          <div class="outcome-label">Languages supported</div>
+        </div>
+      </div> -->
+    <section>
+      <div class="highlight-box">
+        <h3>Key Learnings</h3>
+        <p>I learned how to make an intuitive design for a touchscreen kiosk that is simple yet inviting.</p>
+      </div>
+    </section>
+    <a href="index.html" class="back-link">← Return to Home</a>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        thanks for visiting! :-D <br>
+        designed & coded by eunice with love<br>
+      </div>
+      <div class="footer-right">
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/eunice-lee-372288231/">linkedin</a>
+        <a href="#email">email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
