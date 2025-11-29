@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Eunice Lee</title>
+  <link rel="stylesheet" href="nav.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .hero-about {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: linear-gradient(135deg, #fff9f0 0%, #f0f9ff 30%, #e8ede4 70%, #fff0ff 100%);
+    }
+
+    .profile-circle {
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 30px;
+      border: 5px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-about h1 {
+      font-size: 48px;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    .hero-about p {
+      font-size: 20px;
+      color: #666;
+      font-style: italic;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 80px 50px;
+    }
+
+    .about-section {
+      margin-bottom: 80px;
+    }
+
+    .about-section h2 {
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .philosophy-box {
+      background: linear-gradient(135deg, #f0f9ff 0%, #f9fff5 100%);
+      padding: 40px;
+      border-radius: 12px;
+      margin: 40px 0;
+      border-left: 5px solid #a8d5e2;
+    }
+
+    .philosophy-box p {
+      font-size: 20px;
+      line-height: 1.8;
+      color: #444;
+      font-style: italic;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      margin: 40px 0;
+    }
+
+    .column h3 {
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .column p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin: 40px 0;
+    }
+
+    .interest-card {
+      background: #f9f9f9;
+      padding: 30px 25px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .interest-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .interest-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .interest-card h4 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .interest-card p {
+      font-size: 15px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 30px 0;
+    }
+
+    .skill-tag {
+      background: #e8f4f8;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .culture-section {
+      background: linear-gradient(135deg, #f9fff0 0%, #fef5ff 100%);
+      padding: 40px;
+      border-radius: 12px;
+      margin: 40px 0;
+    }
+
+    .culture-section h3 {
+      font-size: 26px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .culture-section p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .contact-section {
+      text-align: center;
+      background: #f9f9f9;
+      padding: 50px 40px;
+      border-radius: 12px;
+      margin: 60px 0 40px;
+    }
+
+    .contact-section h2 {
+      font-size: 32px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .contact-section p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .contact-btn {
+      display: inline-block;
+      padding: 15px 35px;
+      background: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .contact-btn:hover {
+      background: #555;
+      transform: translateY(-2px);
+    }
+
+    .contact-btn.secondary {
+      background: transparent;
+      color: #333;
+      border: 2px solid #333;
+    }
+
+    .contact-btn.secondary:hover {
+      background: #333;
+      color: white;
+    }
+.photo-booth {
+  margin: 60px 0;
+}
+
+.photo-booth h2 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  text-align: center;
+  color: #333;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.photo-item {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.photo-frame {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-caption {
+  padding: 20px;
+  text-align: center;
+}
+
+.photo-caption h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.photo-caption p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Polaroid style variant - add this if you want a polaroid look */
+.photo-item.polaroid {
+  background: white;
+  padding: 15px;
+  padding-bottom: 60px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.photo-item.polaroid .photo-frame {
+  height: 350px;
+  border: 1px solid #e0e0e0;
+}
+
+.photo-item.polaroid .photo-caption {
+  padding: 15px 10px 0;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+  }
+
+  .photo-frame {
+    height: 350px;
+  }
+
+  .photo-item.polaroid .photo-frame {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .photo-frame {
+    height: 450px;
+  }
+}
+
+    footer {
+      background: #f5f5f5;
+      padding: 40px 50px;
+      margin-top: 0;
+    }
+
+    .footer-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-left {
+      font-style: italic;
+      color: #666;
+    }
+
+    .footer-right {
+      display: flex;
+      gap: 30px;
+    }
+
+    .footer-right a {
+      text-decoration: none;
+      color: #333;
+      transition: opacity 0.3s;
+    }
+
+    .footer-right a:hover {
+      opacity: 0.6;
+    }
+
+    @media (max-width: 768px) {
+      .hero-about {
+        padding: 50px 20px 40px;
+      }
+
+      .profile-circle {
+        width: 200px;
+        height: 200px;
+      }
+
+      .hero-about h1 {
+        font-size: clamp(32px, 7vw, 48px);
+      }
+
+      .hero-about p {
+        font-size: clamp(16px, 4vw, 20px);
+      }
+
+      main {
+        padding: 50px 30px;
+      }
+
+      .about-section {
+        margin-bottom: 60px;
+      }
+
+      .about-section h2 {
+        font-size: clamp(26px, 5vw, 32px);
+      }
+
+      .philosophy-box {
+        padding: 30px 25px;
+      }
+
+      .philosophy-box p {
+        font-size: 18px;
+      }
+
+      .two-column {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .interests-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-btn {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      main {
+        padding: 60px 40px;
+      }
+
+      footer {
+        padding: 40px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <div class="nav-dropdown">
+        <a href="#work">work</a>
+        <div class="dropdown-content">
+          <a href="trekassist.html">TrekAssist</a>
+          <a href="pawpup.html">PawPup Spa</a>
+          <a href="ribbit.html">Ribbit Tunes</a>
+        </div>
+      </div>
+      <a href="#art">art</a>
+    </div>
+    <div class="nav-center">
+      <a href="index.html">
+        <img src="images/leaf.png" alt="Eunice Lee Logo" class="logo">
+      </a>
+    </div>
+    <div class="nav-right">
+      <a href="about.html">about</a>
+      <a href="Eunice Lee Resume.pdf" target="_blank">resume</a>
+    </div>
+  </nav>
+
+  <section class="hero-about">
+    <div class="profile-circle">
+      <img src="images/eunicematcha.JPG" alt="Eunice Lee">
+    </div>
+    <h1>Hey, it's Eunice!</h1>
+    <p>creative engineer with a passion for people ⋆˚꩜｡</p>
+  </section>
+
+  <main>
+    <section class="about-section">
+      <h2>About Me</h2>
+      <p>I'm currently a second-year student at Tufts University, majoring in <strong>Human Factors Engineering and minoring in Engineering Management</strong> . My passion lies in creating designs that genuinely improve people's lives, with a special interest in assistive technology.</p>
+      
+      <p>I believe in the power of user-centered design—listening, iterating, and building solutions that truly make a difference. Whether I'm designing interfaces, building prototypes, or illustrating, I approach every project with empathy and curiosity.</p>
+
+      <p><strong>Fun fact: </strong>I self-learned HTML and CSS to develop this website! What better way to express myself than to create my portfolio myself?</p>
+    </section>
+
+    <div class="philosophy-box">
+      <p>Placing people at the heart of what I do is essential to the way that I work. I want to ensure that what I create develops a positive and bright change in people's lives. That's why I value feedback and suggestions from my users and my clients!</p>
+    </div>
+
+    
+
+    <section class="about-section">
+      <h2>What I Love</h2>
+      
+      <div class="interests-grid">
+        
+
+        <div class="interest-card">
+          <div class="interest-icon">🧱</div>
+          <h4>Building</h4>
+          <p>My love for building LEGOs is actually what sparked my interest in becoming an engineer. My vast collection of LEGOs is forever growing!</p>
+        </div>
+
+        <div class="interest-card">
+          <div class="interest-icon">🎨</div>
+          <h4>Art & Illustration</h4>
+          <p>I'm passionate about art and illustration, and I'm currently in the process of starting my own small business!</p>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon">🎸</div>
+          <h4>Music</h4>
+          <p>I play guitar, ukulele, piano, cello, and love singing. Writing songs is one of my favorite ways to express creativity!</p>
+        </div>
+        <div class="interest-card">
+          <div class="interest-icon">♿</div>
+          <h4>Assistive Technology</h4>
+          <p>I'm deeply interested in designing technology that makes the world more accessible and inclusive for everyone.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-booth">
+  
+  <div class="photo-grid">
+    <div class="photo-item polaroid">
+      <div class="photo-frame">
+        <img src="images/legos.png" alt="legos">
+      </div>
+      <div class="photo-caption">
+        <p>a portion of my lego collection!</p>
+      </div>
+    </div>
+
+    <div class="photo-item polaroid">
+      <div class="photo-frame">
+        <img src="images/adobe.png" alt="adobe illustrator">
+      </div>
+      <div class="photo-caption">
+        <p>when i first dove into graphic design in 2021...</p>
+      </div>
+    </div>
+
+    <div class="photo-item polaroid">
+      <div class="photo-frame">
+        <img src="images/craft.png" alt="craft work">
+      </div>
+      <div class="photo-caption">
+        <p>little clay charms i made! you will always find me crafting :D</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="about-section">
+      <h2>Skills & Tools</h2>
+      <div class="skills-list">
+        <span class="skill-tag">Figma</span>
+        <span class="skill-tag">FigJam</span>
+        <span class="skill-tag">SolidWorks</span>
+        <span class="skill-tag">HTML/CSS</span>
+        <span class="skill-tag">User Research</span>
+        <span class="skill-tag">UI/UX Design</span>
+        <span class="skill-tag">Prototyping</span>
+        <span class="skill-tag">Wireframing</span>
+        <span class="skill-tag">Illustration</span>
+        <span class="skill-tag">Human Factors Engineering</span>
+      </div>
+    </section>
+
+    <div class="culture-section">
+      <h3>My Background</h3>
+      <p>I was born in <strong>Canary Islands, Spain</strong>, but I am Korean! Growing up, I developed an interesting relationship with culture as I am fluent in Spanish but struggle much more in Korean.</p>
+      <p>After time, I was able to use what I thought was a weakness as a strength. I connected with Spanish-speaking communities in my home town to introduce them to robotics as a chance to spread the creative power of STEM. Now, I task myself with doing everything I can to learn Korean! (Yes, I watch K-dramas to learn. (ᵕ-ᴗ-)) </p>
+    </div>
+
+    <section class="contact-section">
+      <h2>Let's Connect!</h2>
+      <p>I'd love to hear from you. Whether you want to collaborate, chat about design, or just say hi!</p>
+      <div class="contact-buttons">
+        <a href="mailto:eunicycle27@gmail.com" class="contact-btn">Email Me</a>
+        <a href="https://www.linkedin.com/in/eunice-lee-372288231/" target="_blank" rel="noopener noreferrer" class="contact-btn secondary">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        thanks for visiting! :-D <br>
+        designed & coded by eunice with love<br>
+      </div>
+      <div class="footer-right">
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/eunice-lee-372288231/">linkedin</a>
+        <a href="mailto:your.email@example.com">email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
