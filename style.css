@@ -107,7 +107,7 @@ body {
 
 /* 2 */
 .image-box:nth-child(2) .image-box-default {
-  background-image: url('images/guitar.png');
+  background-image: url('images/Guitar.png');
   background-size: cover;
   background-position: center;
 }
@@ -120,7 +120,7 @@ body {
 
 /* 1 */
 .image-box:nth-child(1) .image-box-default {
-  background-image: url('images/tech.png');
+  background-image: url('images/Tech.png');
   background-size: cover;
   background-position: center;
 }
@@ -144,7 +144,7 @@ body {
 
 /* 5 */
 .image-box:nth-child(5) .image-box-default {
-  background-image: url('images/build.png');
+  background-image: url('images/Build.png');
   background-size: cover;
   background-position: center;
 }
