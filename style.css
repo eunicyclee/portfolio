@@ -91,14 +91,14 @@ body {
 
 /* these are the child boxes for the 5 hoverable pics */
 
-/* Default images (what shows normally) */
+/* default images  */
 .image-box:nth-child(3) .image-box-default {
   background-image: url('images/Eunice_Lee.png');
   background-size: cover;
   background-position: center;
 }
 
-/* Hover images (what shows on hover) */
+/* hover images (what shows on hover) */
 .image-box:nth-child(3) .image-box-hover {
   background-image: url('images/eunice cam.jpg');
   background-size: cover;
