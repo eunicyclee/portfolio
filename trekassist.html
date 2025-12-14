@@ -248,6 +248,91 @@
       opacity: 0.6;
     }
 
+    .wireframe-section {
+  margin: 60px 0;
+}
+
+.wireframe-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+
+/* Alternate layout - image on right */
+.wireframe-row.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.wireframe-row.reverse .wireframe-image {
+  order: 2;
+}
+
+.wireframe-row.reverse .wireframe-text {
+  order: 1;
+}
+
+.wireframe-image {
+  width: 100%;
+}
+
+.wireframe-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.wireframe-text h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.wireframe-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.wireframe-text ul {
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.wireframe-text li {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wireframe-row,
+  .wireframe-row.reverse {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+
+  .wireframe-row.reverse .wireframe-image,
+  .wireframe-row.reverse .wireframe-text {
+    order: unset;
+  }
+
+  .wireframe-text h3 {
+    font-size: 20px;
+  }
+}
+
     @media (max-width: 1024px) {
 
       main {
@@ -335,7 +420,7 @@
           <a href="pawpup.html">PawPup Spa</a>
         </div>
       </div>
-      <a href="#art">art</a>
+      <a href="art.html">art</a>
     </div>
     <div class="nav-center">
         <a href="index.html">
@@ -489,19 +574,7 @@ extended use on solar power energy that is collected using sensors at the top of
       </video>
     </section>
 
-        <section>
-      <h2>Refinement</h2>
-    <p>After communicating with our product managers, I was able to gather feedback on the two designs and synthesized the strengths from each design into one cohesive TrekAssist interface.<br>
-    Features included the side menu for easy accessibility, the black, white, gray, and red/green color scheme, and useful icons that highlight the functions of each button. This is especially useful for users who may be international tourists.
-    Two improvements I made from the initial designs were:<br>
-    1. More obvious TrekAssist branding<br>
-    2. Simple but cohesive design components</p>
-      <div class="image-grid-case">
-        <img src="images/Home.png" alt="TrekAssist wireframes" class="case-image">
-        <img src="images/Settings.png" alt="TrekAssist wireframes" class="case-image">
-        <img src="images/Park Rules.png" alt="TrekAssist wireframes" class="case-image">
-      </div>
-    </section>
+
 
     <section>
       <h2>User Testing</h2>
@@ -514,25 +587,140 @@ extended use on solar power energy that is collected using sensors at the top of
 
       <div class="outcomes-grid">
         <div class="outcome-card">
-          <div class="outcome-stat">92%</div>
-          <div class="outcome-label">User satisfaction rate</div>
+          <div class="outcome-stat">8.8</div>
+          <div class="outcome-label">/10 average confidence level across tasks</div>
         </div>
         <div class="outcome-card">
-          <div class="outcome-stat">45%</div>
-          <div class="outcome-label">Reduction in getting lost</div>
+          <div class="outcome-stat">100%</div>
+          <div class="outcome-label">Successful task completion rate</div>
         </div>
         <div class="outcome-card">
-          <div class="outcome-stat">8+</div>
-          <div class="outcome-label">Languages supported</div>
+          <div class="outcome-stat">0.92</div>
+          <div class="outcome-label">Average misclick count across tasks</div>
         </div>
       </div>
+      <div>
+      </section>
+
+    <section>
+      <h2>Design Suggestions</h2>
+    <p>Based on the study results, we have decided to make the following improvements on our design:<br>
+    1. Distinguish interactive elements from static text, especially “Nearby Trails.”<br>
+    2. Make the SOS button visible on all pages.<br>
+    3. Increase size and contrast of icons.<br>
+    4. Move the Audio Assist shortcut higher or style it with color/bolding to make it more visible.<br>
+    5. Add an option to navigate to the “Learn” page from “Maps and Trails”, or include a short summary of the location on “Maps and Trails”. </p>
+
+    <p>I implemented the suggestions and improved the prototype. The final interactable prototype is shown and explained below:</p>
+<iframe style="border: 1px solid rgba(224, 224, 224, 0.1); display: block; margin: 40px auto;" width="1000" height="800" src="https://embed.figma.com/proto/vFSjGPfXacxhA45BPE3jLh/Trek?page-id=390%3A1528&node-id=393-4164&p=f&viewport=214%2C318%2C0.1&scaling=contain&content-scaling=fixed&starting-point-node-id=393%3A4164&embed-host=share" allowfullscreen></iframe>
+
+    <section class="wireframe-section">
+<!-- left -->
+  <div class="wireframe-row">
+    <div class="wireframe-image">
+      <img src="images/Home.png" alt="Home screen wireframe">
+    </div>
+    <div class="wireframe-text">
+      <h3>Home Screen</h3>
+      <p>This is the home page of the app. It showcases basic information, such as date, temperature and alerts. Additionally, there are previews of details from other screens, such as a small-scale map, some listed attractions. It is intended to serve as a shortcut to information that the user may need quickly. </p>
+      <ul>
+        <li>Real-time weather updates</li>
+        <li>Quick access to safety alerts</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wireframe-row reverse">
+    <div class="wireframe-image">
+      <img src="trek/map.png" alt="Map screen wireframe">
+    </div>
+    <div class="wireframe-text">
+      <h3>Maps & Trails</h3>
+      <p>This screen shows the Maps and Trails page, where users can explore different trails in the park. Clicking on each location pin shows details about the landmark, and users can navigate the map. There is a compass and emergency button included for ease of navigation and access. </p>
+      <ul>
+        <li>Clear location markers</li>
+        <li>Trail length indicators</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wireframe-row">
+    <div class="wireframe-image">
+      <img src="trek/safety.png" alt="Safety guidelines wireframe">
+    </div>
+    <div class="wireframe-text">
+      <h3>Safety & Emergency</h3>
+      <p>This page ensures that users can have a safe trip to the park. With live weather alerts, more information on closeby resources, and SOS services, this page can be used to prepare for predicted emergencies or get help after unforeseen circumstances.</p>
+      <ul>
+        <li>Easily accessible SOS button</li>
+        <li>Resource availability</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wireframe-row reverse">
+    <div class="wireframe-image">
+      <img src="trek/settings.png" alt="settings wireframe">
+    </div>
+    <div class="wireframe-text">
+      <h3>Settings</h3>
+      <p>This page allows the user to adjust the settings, such as language, audio assist, brightness, contrast level, and font size of the application. </p>
+      <ul>
+        <li>Intuitive buttons</li>
+        <li>Easy setting customizability</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wireframe-row">
+    <div class="wireframe-image">
+      <img src="trek/learn.png" alt="learn wireframe">
+    </div>
+    <div class="wireframe-text">
+      <h3>Learn</h3>
+      <p>This page serves as the entertainment and knowledge hub of the user’s trip. By providing sneak-peeks into the history, culture and wildlife of the area, the page is perfect for users who want to learn more about the sites they are visiting. As can be seen at the top of the page, all live alerts and reminders are still accessible outside of the Safety page too, ensuring that the user’s safety is prioritized.  </p>
+      <ul>
+        <li>Immersive and interactable features</li>
+        <li>Connected and cohesive design</li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="wireframe-row reverse">
+    <div class="wireframe-image">
+      <img src="trek/rules.png" alt="park rules wireframe">
+    </div>
+    <div class="wireframe-text">
+      <h3>Park Rules</h3>
+      <p>This page presents information about the rules of the Yellowstone National Park to ensure that the visitors are aware of the expected behaviors and that the park can operate safely.</p>
+      <ul>
+        <li>Interactable buttons</li>
+        <li>Engaging design elements</li>
+      </ul>
+    </div>
+  </div>
+  
+    <div class="wireframe-row">
+    <div class="wireframe-image">
+      <img src="trek/messages.png" alt="messages wireframe">
+    </div>
+    <div class="wireframe-text">
+      <h3>Messages</h3>
+      <p>This page allows visitors to contact Emergency services or people they know to stay in touch during their trip or reach out in case of emergencies. </p>
+      <ul>
+        <li>Familiar design</li>
+        <li>Intuitive buttons</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
     <section>
       <div class="highlight-box">
         <h3>Key Learnings</h3>
-        <p>As I was designing a device for outdoor environments, I considered the careful requirements of readability and diverse user needs. I kept conscious of design choices that would reflect an accessible and welcoming design.</p>
+        <p>Through this case study, I learned how to make effective design choices that can communicate to users from anywhere in the world. I was able to practice visual design components to adjust to an e-ink screen.</p>
       </div>
     </section>
-
     <a href="index.html" class="back-link">← Return to Home</a>
   </main>
 
