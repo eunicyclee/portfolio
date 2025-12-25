@@ -293,6 +293,91 @@
       opacity: 0.6;
     }
 
+
+.wireframe-section {
+  margin: 60px 0;
+}
+
+.wireframe-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 60px;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 12px;
+}
+
+/* alternate layout - image on right */
+.wireframe-row.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.wireframe-row.reverse .wireframe-image {
+  order: 2;
+}
+
+.wireframe-row.reverse .wireframe-text {
+  order: 1;
+}
+
+.wireframe-image {
+  width: 100%;
+}
+
+.wireframe-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.wireframe-text h3 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.wireframe-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.wireframe-text ul {
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+.wireframe-text li {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .wireframe-row,
+  .wireframe-row.reverse {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+
+  .wireframe-row.reverse .wireframe-image,
+  .wireframe-row.reverse .wireframe-text {
+    order: unset;
+  }
+
+  .wireframe-text h3 {
+    font-size: 20px;
+  }
+}
     @media (max-width: 1024px) {
 
       main {
@@ -531,52 +616,88 @@
 
       <div>
         <p><br>One major improvement I made was making the buttons look more like clickable buttons. In the previous wireframes, it may not have been too clear that they are elements that a user can interact with.<br>Now that I had a better sense of direction, I fine tuned and made improvements upon my initial low/mid-fi wireframes.<br>I chose different colors for different buttons or sections to demonstrate that they are different tasks and for users to be able to remember and distinguish the buttons/tasks by these colors. For all of the high-fidelity screens, I made sure to include the task color into each page's design. This would help the user memorize the differences in tasks/buttons. Although the theme is cohesive, this slight difference is effective in differentiating where each home page button leads to.<br></p>
-        <div class="content-row">
-          <img src="ribbit/landing hi.png" alt="ribbit frames" class="case-image small">
-          <div class="text-content">
-            <h2>Welcome & Home Page</h2>
-            <p>Here you can see how I developed the previous two frames I showed. I made the background less bright for a softer, more welcoming experience. I also integrated the brand fonts that read the main button features. They also have small descriptions so users won't be surprised when they click into those pages. </p>
-            <p>The reason that I only added text under the user image at the top right was to highlight identity and independence of the child learner. I didn't add text for 'Settings', since it's not a button I expect the child to be tampering with or editing as much as a parent or guardian would.</p>
-          </div>
-        </div>
-        <div class="content-row">
-          <div class="text-content">
-            <h2>Free Play</h2>
-            <p>When users want to play freely without restraint, this is the page that they would click into. The song that they are currently learning will appear, and the user can play it in order to follow along independently. An animated frog will move along to the tune that the user is playing, saying encouraging things on the screen. </p>
-          </div>
-            <video autoplay muted loop style="flex-shrink: 0; width: 300px; border-radius: 8px;">
-            <source src="ribbit/play screen.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        </div>
-        <div class="content-row">
-          <img src="ribbit/learn.png" alt="ribbit frames" class="case-image medium">
-          <div class="text-content">
-            <h2>Learn</h2>
-            <p>In this page, users will be able to access the app’s catalog of song lessons. The difficulty is shown using stars, and a play button appears on every song if the user wants to hear a sample of it. </p>
-            <p>I used a scrollable list because it’s common and familiar. This means the users will have experience using this. I made sure to add a scroll bar to show the user where they are in the list.<br>A pop-up will remain on the screen without having users confused about what to do. A darker background was chosen to help the pop-up stand out.<br>An instruction note was placed in the middle of the interface with direction for what to select next to minimize confusion.<br>The buttons are displayed on the right to not interfere with the notes. The keyboard display changes color when that note is being played. To emphasize this, a pink glow appears.<br>In clef mode, the pink glow that demonstrates when notes are played are on the left side of the clef. The keys still change colors when a note is being played to maintain consistency.<br>If ‘Note Assist’ is turned off, the tail of each note will appear to make it more realistic to how normal music is being read. The on and off bar has text indication to ensure the mode that is employed is communicated.</p>
-        </div>
-        </div>
-        <div class="content-row">
-          <div class="text-content">
-            <h2>Beat Maker</h2>
-            <p>On this page, users are able to play beats at a tempo of their choice to learn how different beats sound. Users can click into a beat option and play it when that beat lights up. They can also play that beat to the song they are learning (with the ability to change the song as well). </p>
-        </div>
-             <img src="ribbit/beat.png" alt="ribbit frames" class="case-image small">
-        </div>
-        <div class="content-row">
-          <video autoplay muted loop style="flex-shrink: 0; width: 300px; border-radius: 8px;">
-            <source src="ribbit/share screen.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-          <div class="text-content">
-            <h2>Record & Share</h2>
-            <p>In the record page, users are able to record themselves playing, access their previous recordings, and share their recordings with trusted contacts. I kept icons and formatting similar to well-known and familiar recording apps such as Apple's <i>Voice Memos.</i></p>
-          </div>
-        </div>
       </div>
     </section>
 
+    
+<section class="wireframe-section">
+<!-- left -->
+  <div class="wireframe-row">
+    <div class="wireframe-image">
+      <img src="ribbit/landing hi.png" alt="ribbit frames">
+    </div>
+    <div class="wireframe-text">
+      <h3>Welcome & Home Page</h3>
+      <p>Here you can see how I developed the previous two frames I showed. I made the background less bright for a softer, more welcoming experience. I also integrated the brand fonts that read the main button features. They also have small descriptions so users won't be surprised when they click into those pages.
+      The reason that I only added text under the user image at the top right was to highlight identity and independence of the child learner. I didn't add text for 'Settings', since it's not a button I expect the child to be tampering with or editing as much as a parent or guardian would.</p>
+      <ul>
+        <li>Introduction of Ribbit Tunes mascot/character</li>
+        <li>Minimal and intuitive home page with descriptive buttons</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wireframe-row reverse">
+    <div class="wireframe-image">
+      <video autoplay muted loop style="flex-shrink: 0; width: 300px; border-radius: 0px;">
+            <source src="ribbit/play screen.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="wireframe-text">
+      <h3>Free Play</h3>
+      <p>When users want to play freely without restraint, this is the page that they would click into. The song that they are currently learning will appear, and the user can play it in order to follow along independently. An animated frog will move along to the tune that the user is playing, saying encouraging things on the screen. </p>
+      <ul>
+        <li>Connected elements to other main features (song lessons)</li>
+        <li>Cute and simple design to encourage independent practice</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wireframe-row">
+    <div class="wireframe-image">
+      <img src="ribbit/learn.png" alt="learn wireframe">
+    </div>
+    <div class="wireframe-text">
+      <h3>Learn</h3>
+            <p>In this page, users will be able to access the app’s catalog of song lessons. The difficulty is shown using stars, and a play button appears on every song if the user wants to hear a sample of it.
+            <br>I used a scrollable list because it’s common and familiar. This means the users will have experience using this. I made sure to add a scroll bar to show the user where they are in the list.<br>A pop-up will remain on the screen without having users confused about what to do. A darker background was chosen to help the pop-up stand out.<br>An instruction note was placed in the middle of the interface with direction for what to select next to minimize confusion.<br>The buttons are displayed on the right to not interfere with the notes. The keyboard display changes color when that note is being played. To emphasize this, a pink glow appears.<br>In clef mode, the pink glow that demonstrates when notes are played are on the left side of the clef. The keys still change colors when a note is being played to maintain consistency.<br>If ‘Note Assist’ is turned off, the tail of each note will appear to make it more realistic to how normal music is being read. The on and off bar has text indication to ensure the mode that is employed is communicated.</p>
+     <ul>
+        <li>Intuitive scrolling for song catalog</li>
+        <li>Different modes of learning to accomodate to learners of different levels</li>
+      </ul>
+    </div>
+  </div>
+    <div class="wireframe-row reverse">
+    <div class="wireframe-image">
+      <img src="ribbit/beat.png" alt="beat wireframe">
+    </div>
+    <div class="wireframe-text">
+      <h3>Beat Maker</h3>
+          <p>On this page, users are able to play beats at a tempo of their choice to learn how different beats sound. Users can click into a beat option and play it when that beat lights up. They can also play that beat to the song they are learning (with the ability to change the song as well). </p>
+      <ul>
+        <li>Cohesive design elements</li>
+        <li>Intuitive rhythm learning patterns</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wireframe-row">
+    <div class="wireframe-image ">
+      <video autoplay muted loop style="flex-shrink: 0; width: 300px; border-radius: 8px;">
+            <source src="ribbit/share screen.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="wireframe-text">
+      <h3>Record & Share</h3>
+        <p>In the record page, users are able to record themselves playing, access their previous recordings, and share their recordings with trusted contacts. I kept icons and formatting similar to well-known and familiar recording apps such as Apple's <i>Voice Memos.</i></p>
+     <ul>
+        <li>Familiar ways of creating voice recordings</li>
+        <li>Secure and simple way to share recordings to loved ones</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
     <section style="display: flex; flex-direction: column; align-items: center;">
       <h2>Prototyping</h2>
